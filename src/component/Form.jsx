@@ -36,7 +36,7 @@ const Form = () => {
     <>
     <form onSubmit={handleSubmit}>
         <div className="mb-3">
-          <label htmlFor="firstname" className="form-label ">First name {form.firstName}</label>
+          <label htmlFor="firstname" className="form-label ">First name </label>
           <input type="text" className="form-control" id="firstname" name="firstname" value={form.firstName} onChange={(e)=>setForm({...form, firstName:e.target.value,id:Math.floor(Math.random()*1000)})} />
         </div>
         <div className="mb-3">
@@ -44,7 +44,7 @@ const Form = () => {
           <input type="text" className="form-control" id="lastname" name="firstname" value={form.lastName} onChange={(e)=>setForm({...form, lastName:e.target.value})}  />
         </div>
         <div className="mb-3">
-          <label htmlFor="email" className="form-label">E-mail {form.email}</label>
+          <label htmlFor="email" className="form-label">E-mail </label>
           <input type="email" className="form-control" id="email" name="firstname"  value={form.email} onChange={(e)=>setForm({...form, email:e.target.value})} />
         </div>                                                                                          
         <div className="mb-3">
