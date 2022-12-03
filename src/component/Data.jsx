@@ -4,7 +4,11 @@ import Modal from "./Modal";
 import{useState} from "react";
 
 const Data = ({data,setData}) => {
+  const myStyle = {
+   color:"white"
+   
 
+  }
     const [form2, setForm2] = useState({
         id:"",
         firstName:"",
@@ -43,8 +47,8 @@ data.map(item =>{
     }
 
   return (
-    <div>
-        <table className="table">
+    <div style={{backgroundColor:"#809CAC"}}>
+        <table className="table" >
   <thead>
     <tr>
       <th scope="col">id</th>
@@ -60,13 +64,13 @@ data.map(item =>{
     {data.map((person,index) =>{
         const{id,firstName,lastName,email,password,completed}=person
         return(
-        <tr key={index}>
-      <th scope="row">{id}</th>
-      <td className={person.completed ? "text-decoration-line-through" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer"}} >{firstName}</td>
-      <td className={person.completed ? "text-decoration-line-through" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer"}}>{lastName}</td>
-      <td className={person.completed ? "text-decoration-line-through" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer"}}>{email}</td>
-      <td className={person.completed ? "text-decoration-line-through" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer"}}>{password}</td>
-      <td style={{cursor:"pointer"}} onClick={()=> handleDelete(id)} ><Delete/></td>
+        <tr  key={index}>
+      <th scope="row" style={{color:"white"}} >{id}</th>
+      <td className={person.completed ? "text-decoration-line-through " : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer",color:"white"}} >{firstName}</td>
+      <td className={person.completed ? "text-decoration-line-through" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer",color:"white"}}>{lastName}</td>
+      <td className={person.completed ? "text-decoration-line-through fs-2" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer",color:"white"}}>{email}</td>
+      <td className={person.completed ? "text-decoration-line-through fs-2" : ""} onClick={()=>handleClick(id,completed)} style={{cursor:"pointer",color:"white"}}>{password}</td>
+      <td  style={{cursor:"pointer"}} onClick={()=> handleDelete(id)} ><Delete/></td>
       <td style={{cursor:"pointer"}} onClick={()=>handleEdit(person)}
       data-bs-toggle="modal" data-bs-target="#exampleModal"
       ><Edit/></td>
